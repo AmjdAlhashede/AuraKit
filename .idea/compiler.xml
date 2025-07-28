@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel>
+      <module name="AuraKit.aurakit-bom" target="21" />
+      <module name="AuraKit.aurakit-common" target="21" />
+      <module name="AuraKit.aurakit-core" target="21" />
+      <module name="AuraKit.aurakit-engine" target="21" />
+      <module name="AuraKit.aurakit-format-m4a" target="21" />
+      <module name="AuraKit.aurakit-format-mp3" target="21" />
+      <module name="AuraKit.aurakit-format-ogg" target="21" />
+      <module name="AuraKit.aurakit-format-wav" target="21" />
+      <module name="AuraKit.aurakit-operation-cut" target="21" />
+      <module name="AuraKit.aurakit-operation-merge" target="21" />
+      <module name="AuraKit.aurakit-operation-reverse" target="21" />
+      <module name="AuraKit.aurakit-source-file" target="21" />
+      <module name="AuraKit.libraries.aurakit-codecs-foundation" target="21" />
+      <module name="AuraKit.libraries.aurakit-common" target="21" />
+      <module name="AuraKit.libraries.aurakit-source" target="21" />
+      <module name="AuraKit.libraries.aurakit-sources-foundation" target="21" />
+      <module name="AuraKit.libraries.foundation.aurakit-audio-foundation" target="21" />
+      <module name="AuraKit.libraries.foundation.aurakit-operation-foundation" target="21" />
+      <module name="AuraKit.libraries.foundation.aurakit-output-foundation" target="21" />
+      <module name="AuraKit.libraries.source.aurakit-source-file" target="21" />
+      <module name="AuraKit.libraries.sources.aurakit-source-file" target="21" />
+      <module name="format.AuraKit.aurakit-format-m4a" target="21" />
+      <module name="format.AuraKit.aurakit-format-mp3" target="21" />
+      <module name="format.AuraKit.aurakit-format-ogg" target="21" />
+      <module name="format.AuraKit.aurakit-format-wav" target="21" />
+      <module name="libraries.AuraKit.aurakit-source" target="21" />
+      <module name="operations.AuraKit.aurakit-operation-cut" target="21" />
+      <module name="operations.AuraKit.aurakit-operation-merge" target="21" />
+      <module name="operations.AuraKit.aurakit-operation-reverse" target="21" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
