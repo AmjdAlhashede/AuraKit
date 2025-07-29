@@ -1,4 +1,4 @@
-package io.github.aurakit.source.file
+package io.github.aurakit.codec.m4a
 
 import org.junit.Test
 
