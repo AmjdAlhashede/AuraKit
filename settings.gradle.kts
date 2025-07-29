@@ -1,5 +1,11 @@
 @file:Suppress("UnstableApiUsage")
 
+include(":libraries:aurakit-bom")
+
+
+include(":libraries:codec:aurakit-codec-m4a")
+
+
 include(":libraries:source:aurakit-file-source")
 include(":libraries:common:aurakit-context-lifecycle")
 include(":libraries:core:aurakit-source-core")
@@ -14,6 +20,7 @@ include(":libraries:operation:aurakit-media-cut")
 include(":libraries:foundation:aurakit-sources-foundation")
 include(":libraries:foundation:aurakit-codecs-foundation")
 include(":libraries:engine:aurakit-engine-entry")
+include(":libraries:engine:aurakit-engine-entry-pack")
 include(":libraries:core:aurakit-core")
 
 
@@ -37,6 +44,7 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        mavenLocal()
     }
 }
 
