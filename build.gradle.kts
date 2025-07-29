@@ -4,4 +4,20 @@ plugins {
     alias(libs.plugins.kotlin.android) apply false
     alias(libs.plugins.kotlin.compose) apply false
     alias(libs.plugins.android.library) apply false
+    alias(libs.plugins.android.fusedlibrary) apply false
+    alias(libs.plugins.nexus.publish.plugin)
+}
+
+group = libs.versions.groupId.get()
+version = libs.versions.aurakitVersion.get()
+
+nexusPublishing {
+    repositories {
+        sonatype {
+            nexusUrl.set(uri("https://ossrh-staging-api.central.sonatype.com/service/local/"))
+            snapshotRepositoryUrl.set(uri("https://central.sonatype.com/repository/maven-snapshots/"))
+            username.set(project.findProperty("ossrhUsername") as String?)
+            password.set(project.findProperty("ossrhPassword") as String?)
+        }
+    }
 }

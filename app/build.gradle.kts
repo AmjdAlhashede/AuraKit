@@ -1,16 +1,21 @@
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
 }
 
+
+
 android {
     namespace = "io.github.aurakit"
-    compileSdk = 35
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "io.github.aurakit"
         minSdk = 21
+        //noinspection OldTargetApi
         targetSdk = 35
         versionCode = 1
         versionName = "1.0"
@@ -31,18 +36,23 @@ android {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
-    kotlinOptions {
-        jvmTarget = "11"
-    }
     buildFeatures {
         compose = true
     }
 }
 
+kotlin {
+    compilerOptions {
+        jvmTarget.set(JvmTarget.JVM_11)
+    }
+}
+
 dependencies {
-    implementation(project(":libraries:engine:aurakit-engine-entry"))
+//    implementation(libs.aurakit.engine.entry)
+//    implementation(project(":libraries:engine:aurakit-engine-entry"))
     implementation(project(":libraries:operation:aurakit-media-cut"))
-    implementation(project(":libraries:source:aurakit-source-assets"))
+//    implementation(project(":libraries:common:aurakit-common"))
+//    implementation(project(":libraries:source:aurakit-source-assets"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.lifecycle.runtime.ktx)
