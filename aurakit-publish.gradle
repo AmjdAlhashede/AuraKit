@@ -1,0 +1,113 @@
+/*
+ *   Copyright 2025 Amjd Alhashede
+ *
+ *    Licensed under the Apache License, Version 2.0 (the "License");
+ *    you may not use this file except in compliance with the License.
+ *    You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *    Unless required by applicable law or agreed to in writing, software
+ *    distributed under the License is distributed on an "AS IS" BASIS,
+ *    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *    See the License for the specific language governing permissions and
+ *    limitations under the License.
+ */
+//file:noinspection ConfigurationAvoidance
+
+//apply plugin: 'maven-publish'
+//
+//afterEvaluate {
+//    publishing {
+//        publications {
+//            def artifactId = project.name
+//            def aurakitGroupId = libs.versions.groupId.get()
+//            def aurakitVersion = libs.versions.aurakitVersion.get()
+//            def component =
+//                    components.findByName("release") ?:
+//                            components.findByName("fusedLibraryComponent") ?:
+//                                    components.findByName("javaPlatform")
+//
+//            if (component == null) {
+//                throw new GradleException("🛑 Publishing failed! '${project.name}' has no exportable components.")
+//            }
+//
+//            release(MavenPublication) {
+//                artifactId = project.name
+//                version = aurakitVersion
+//
+//                if (component.name != "javaPlatform") {
+//                    groupId = aurakitGroupId
+//                }
+//
+//                from component
+//            }
+//        }
+//    }
+//}
+
+apply plugin: 'maven-publish'
+afterEvaluate {
+    publishing {
+        publications {
+            def aurakitArtifactId = project.name
+            def aurakitGroupId = libs.versions.groupId.get()
+            def aurakitVersion = libs.versions.aurakitVersion.get()
+            def component =
+                    components.findByName("release") ?:
+                            components.findByName("fusedLibraryComponent") ?:
+                                    components.findByName("javaPlatform")
+
+            if (component == null) {
+                throw new GradleException("🛑 Publishing failed! '$aurakitArtifactId' has no exportable components.")
+            }
+
+            release(MavenPublication) {
+                groupId = aurakitGroupId
+                artifactId = aurakitArtifactId
+                version = aurakitVersion
+
+                from component
+
+                pom {
+                    name.set(project.name)
+                    description.set("AuraKit ${aurakitArtifactId} module – modular Android framework for multimedia processing.")
+                    url.set("https://github.com/AmjdAlhashede/AuraKit")
+
+                    licenses {
+                        license {
+                            name.set("Apache License 2.0")
+                            url.set("https://www.apache.org/licenses/LICENSE-2.0")
+                            distribution.set("repo")
+                        }
+                    }
+
+                    developers {
+                        developer {
+                            id.set("AmjdAlhashede")
+                            name.set("Amjd Alhashede")
+                            email.set("amjdalhashede@gmail.com")
+                        }
+                    }
+
+                    scm {
+                        connection.set("scm:git:github.com/AmjdAlhashede/AuraKit.git")
+                        developerConnection.set("scm:git:ssh://github.com/amjdalhashede/AuraKit.git")
+                        url.set("https://github.com/AmjdAlhashede/AuraKit")
+                    }
+                }
+            }
+        }
+        repositories {
+            maven {
+                name = "sonatypeDirect"
+                url = uri("https://ossrh-staging-api.central.sonatype.com/service/local/")
+                credentials {
+                    username = project.findProperty("ossrhUsername") as String
+                    password = project.findProperty("ossrhPassword") as String
+                }
+            }
+        }
+    }
+}
+
