@@ -12,7 +12,9 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/libraries" />
+            <option value="$PROJECT_DIR$/libraries/aurakit-bom" />
             <option value="$PROJECT_DIR$/libraries/codec" />
+            <option value="$PROJECT_DIR$/libraries/codec/aurakit-codec-m4a" />
             <option value="$PROJECT_DIR$/libraries/codec/aurakit-codec-mp3" />
             <option value="$PROJECT_DIR$/libraries/codec/aurakit-codec-ogg" />
             <option value="$PROJECT_DIR$/libraries/common" />
@@ -25,6 +27,7 @@
             <option value="$PROJECT_DIR$/libraries/core/aurakit-source-core" />
             <option value="$PROJECT_DIR$/libraries/engine" />
             <option value="$PROJECT_DIR$/libraries/engine/aurakit-engine-entry" />
+            <option value="$PROJECT_DIR$/libraries/engine/aurakit-engine-entry-pack" />
             <option value="$PROJECT_DIR$/libraries/foundation" />
             <option value="$PROJECT_DIR$/libraries/foundation/aurakit-codecs-foundation" />
             <option value="$PROJECT_DIR$/libraries/foundation/aurakit-sources-foundation" />
