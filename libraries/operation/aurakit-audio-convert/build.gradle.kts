@@ -7,7 +7,9 @@ apply(from = rootProject.file("common_library_config.gradle"))
 
 android {
     namespace = "io.github.aurakit.audio.convert"
-
+    defaultConfig {
+        consumerProguardFiles("consumer-rules.pro")
+    }
     buildTypes {
         release {
             proguardFiles(
@@ -19,7 +21,8 @@ android {
 }
 
 dependencies {
-    implementation(project(":libraries:common:aurakit-common"))
+    api(aurakit.common)
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)

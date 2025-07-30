@@ -15,7 +15,6 @@
       <module name="AuraKit.aurakit-operation-reverse" target="21" />
       <module name="AuraKit.aurakit-source-file" target="21" />
       <module name="AuraKit.libraries.aurakit-codecs-foundation" target="21" />
-      <module name="AuraKit.libraries.aurakit-common" target="21" />
       <module name="AuraKit.libraries.aurakit-source" target="21" />
       <module name="AuraKit.libraries.aurakit-sources-foundation" target="21" />
       <module name="AuraKit.libraries.foundation.aurakit-audio-foundation" target="21" />

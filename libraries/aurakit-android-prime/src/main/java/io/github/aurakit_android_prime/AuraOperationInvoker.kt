@@ -14,15 +14,13 @@
  *    limitations under the License.
  */
 
-package io.github.aurakit.sources.foundation.factory
-//
-//import io.github.aurakit.source.core.contract.AuraSource
-//import java.util.ServiceLoader
-//
-//object AuraSourceFactory {
-//    private val resolvers = ServiceLoader.load(AuraSource::class.java).toList()
-//
-//    fun resolve(model: Any): AuraSource? {
-//        return resolvers.firstOrNull { it.isCompatible(model) }
-//    }
-//}
+package io.github.aurakit_android_prime
+
+import io.github.aurakit.operation.core.contract.AuraBaseOperation
+
+object AuraOperationInvoker {
+
+    suspend fun <T> invoke(operation: AuraBaseOperation<T>): T {
+        return operation.execute()
+    }
+}

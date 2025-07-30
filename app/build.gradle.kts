@@ -6,8 +6,6 @@ plugins {
     alias(libs.plugins.kotlin.compose)
 }
 
-
-
 android {
     namespace = "io.github.aurakit"
     compileSdk = 36
@@ -50,7 +48,7 @@ kotlin {
 dependencies {
 //    implementation(libs.aurakit.engine.entry)
 //    implementation(project(":libraries:engine:aurakit-engine-entry"))
-    implementation(project(":libraries:operation:aurakit-media-cut"))
+//    implementation(project(":libraries:operation:aurakit-media-cut"))
 //    implementation(project(":libraries:common:aurakit-common"))
 //    implementation(project(":libraries:source:aurakit-source-assets"))
 

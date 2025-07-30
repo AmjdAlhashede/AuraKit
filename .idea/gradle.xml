@@ -11,32 +11,24 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/demo" />
+            <option value="$PROJECT_DIR$/demo/media-convertor-demo" />
             <option value="$PROJECT_DIR$/libraries" />
-            <option value="$PROJECT_DIR$/libraries/aurakit-bom" />
+            <option value="$PROJECT_DIR$/libraries/aurakit-android-prime" />
+            <option value="$PROJECT_DIR$/libraries/aurakit-common" />
+            <option value="$PROJECT_DIR$/libraries/aurakit-context-lifecycle" />
             <option value="$PROJECT_DIR$/libraries/codec" />
-            <option value="$PROJECT_DIR$/libraries/codec/aurakit-codec-m4a" />
-            <option value="$PROJECT_DIR$/libraries/codec/aurakit-codec-mp3" />
             <option value="$PROJECT_DIR$/libraries/codec/aurakit-codec-ogg" />
-            <option value="$PROJECT_DIR$/libraries/common" />
-            <option value="$PROJECT_DIR$/libraries/common/aurakit-common" />
-            <option value="$PROJECT_DIR$/libraries/common/aurakit-context-lifecycle" />
             <option value="$PROJECT_DIR$/libraries/core" />
             <option value="$PROJECT_DIR$/libraries/core/aurakit-codec-core" />
             <option value="$PROJECT_DIR$/libraries/core/aurakit-core" />
             <option value="$PROJECT_DIR$/libraries/core/aurakit-operation-core" />
             <option value="$PROJECT_DIR$/libraries/core/aurakit-source-core" />
-            <option value="$PROJECT_DIR$/libraries/engine" />
-            <option value="$PROJECT_DIR$/libraries/engine/aurakit-engine-entry" />
-            <option value="$PROJECT_DIR$/libraries/engine/aurakit-engine-entry-pack" />
             <option value="$PROJECT_DIR$/libraries/foundation" />
             <option value="$PROJECT_DIR$/libraries/foundation/aurakit-codecs-foundation" />
             <option value="$PROJECT_DIR$/libraries/foundation/aurakit-sources-foundation" />
             <option value="$PROJECT_DIR$/libraries/operation" />
-            <option value="$PROJECT_DIR$/libraries/operation/aurakit-audio-convert" />
-            <option value="$PROJECT_DIR$/libraries/operation/aurakit-media-cut" />
-            <option value="$PROJECT_DIR$/libraries/source" />
-            <option value="$PROJECT_DIR$/libraries/source/aurakit-file-source" />
-            <option value="$PROJECT_DIR$/libraries/source/aurakit-source-assets" />
+            <option value="$PROJECT_DIR$/libraries/operation/aurakit-media-transcoder" />
           </set>
         </option>
       </GradleProjectSettings>

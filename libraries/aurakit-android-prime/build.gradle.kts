@@ -4,22 +4,25 @@ plugins {
 }
 
 description = """
-        Core module in AuraKit that defines and organizes the set of supported media sources.
-     Serves as the foundation for discovering which types of sources can be handled by the framework, including embedded sources like assets and external ones such as file systems or remote modules.
-     Provides a unified interface for resolving and standardizing access to all supported source types.
+       Prime entrypoint to AuraKit's Android ecosystem.
+    Offers a unified interface for media handling, asset workflows, and core system access.
+    Tailored for direct app integration with emphasis on clarity, modularity, and performance.
 """.trimIndent()
 
 apply(from = rootProject.file("common_library_config.gradle"))
 apply(from = rootProject.file("aurakit-publish.gradle"))
 
 android {
-    namespace = "io.github.aurakit.sources.foundation"
+    namespace = "io.github.aurakit_android_prime"
+
     defaultConfig {
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
     }
 
     buildTypes {
         release {
+            isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -30,7 +33,10 @@ android {
 
 dependencies {
     implementation(aurakit.common)
-    api(aurakit.source.core)
+    api(aurakit.operation.core)
+    api(aurakit.sources.foundation)
+    api(aurakit.codecs.foundation)
+
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

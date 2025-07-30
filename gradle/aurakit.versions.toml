@@ -1,0 +1,16 @@
+[versions]
+groupId = "io.github.amjdalhashede"
+aurakitDevelopmentVersion = "0.0.1-alpha2"
+aurakitPublishedVersion = "0.0.1-alpha1"
+
+[libraries]
+core = { module = "io.github.amjdalhashede:aurakit-core", version.ref = "aurakitPublishedVersion" }
+common = { module = "io.github.amjdalhashede:aurakit-common", version.ref = "aurakitPublishedVersion" }
+codec-core = { module = "io.github.amjdalhashede:aurakit-codec-core", version.ref = "aurakitPublishedVersion" }
+operation-core = { module = "io.github.amjdalhashede:aurakit-operation-core", version.ref = "aurakitPublishedVersion" }
+source-core = { module = "io.github.amjdalhashede:aurakit-source-core", version.ref = "aurakitPublishedVersion" }
+context-lifecycle = { module = "io.github.amjdalhashede:aurakit-context-lifecycle", version.ref = "aurakitPublishedVersion" }
+codecs-foundation = { module = "io.github.amjdalhashede:aurakit-codecs-foundation", version.ref = "aurakitPublishedVersion" }
+sources-foundation = { module = "io.github.amjdalhashede:aurakit-sources-foundation", version.ref = "aurakitPublishedVersion" }
+[plugins]
+

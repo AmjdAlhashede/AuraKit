@@ -7,7 +7,9 @@ apply(from = rootProject.file("common_library_config.gradle"))
 
 android {
     namespace = "io.github.aurakit.media.cut"
-
+    defaultConfig {
+        consumerProguardFiles("consumer-rules.pro")
+    }
     buildTypes {
         release {
             proguardFiles(
@@ -19,9 +21,11 @@ android {
 }
 
 dependencies {
+
     implementation(project(":libraries:core:aurakit-operation-core"))
     implementation(project(":libraries:foundation:aurakit-sources-foundation"))
     implementation(project(":libraries:foundation:aurakit-codecs-foundation"))
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)

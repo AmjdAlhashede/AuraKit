@@ -46,32 +46,38 @@
 //    }
 //}
 
+apply plugin: 'com.android.library'
 apply plugin: 'maven-publish'
+apply plugin: 'signing'
+
+android {
+    publishing {
+        singleVariant("release") {
+            withSourcesJar()
+        }
+    }
+}
+
 afterEvaluate {
+    def aurakitArtifactId = project.name
+    def component = components.findByName("release")
+    def auraDescription =  project.description != null ? project.description : "AuraKit ${aurakitArtifactId} module – modular Android framework for multimedia processing."
+
+    if (component == null) {
+        throw new GradleException("🛑 Publishing failed! '$aurakitArtifactId' has no exportable components.")
+    }
+
     publishing {
         publications {
-            def aurakitArtifactId = project.name
-            def aurakitGroupId = libs.versions.groupId.get()
-            def aurakitVersion = libs.versions.aurakitVersion.get()
-            def component =
-                    components.findByName("release") ?:
-                            components.findByName("fusedLibraryComponent") ?:
-                                    components.findByName("javaPlatform")
-
-            if (component == null) {
-                throw new GradleException("🛑 Publishing failed! '$aurakitArtifactId' has no exportable components.")
-            }
-
             release(MavenPublication) {
-                groupId = aurakitGroupId
+                groupId = aurakit.versions.groupId.get()
+                version = aurakit.versions.aurakitDevelopmentVersion.get()
                 artifactId = aurakitArtifactId
-                version = aurakitVersion
-
                 from component
 
-                pom {
+               pom {
                     name.set(project.name)
-                    description.set("AuraKit ${aurakitArtifactId} module – modular Android framework for multimedia processing.")
+                    description.set(auraDescription)
                     url.set("https://github.com/AmjdAlhashede/AuraKit")
 
                     licenses {
@@ -98,16 +104,10 @@ afterEvaluate {
                 }
             }
         }
-        repositories {
-            maven {
-                name = "sonatypeDirect"
-                url = uri("https://ossrh-staging-api.central.sonatype.com/service/local/")
-                credentials {
-                    username = project.findProperty("ossrhUsername") as String
-                    password = project.findProperty("ossrhPassword") as String
-                }
-            }
+
+        signing {
+            useGpgCmd()
+            sign publishing.publications["release"]
         }
     }
 }
-

@@ -14,7 +14,7 @@
  *    limitations under the License.
  */
 apply plugin: 'com.android.library' 
-group = libs.versions.groupId.get()
+group = aurakit.versions.groupId.get()
 
 android {
     compileSdkVersion libs.versions.compileSdk.get().toInteger()

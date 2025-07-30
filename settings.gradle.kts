@@ -1,28 +1,25 @@
-@file:Suppress("UnstableApiUsage")
+include(":libraries:aurakit-android-prime")
 
-include(":libraries:aurakit-bom")
+//aurakit
+include(":libraries:aurakit-common")
+include(":libraries:aurakit-context-lifecycle")
 
-
-include(":libraries:codec:aurakit-codec-m4a")
-
-
-include(":libraries:source:aurakit-file-source")
-include(":libraries:common:aurakit-context-lifecycle")
-include(":libraries:core:aurakit-source-core")
-include(":libraries:core:aurakit-codec-core")
-include(":libraries:core:aurakit-operation-core")
-include(":libraries:common:aurakit-common")
-include(":libraries:source:aurakit-source-assets")
-include(":libraries:codec:aurakit-codec-mp3")
-include(":libraries:codec:aurakit-codec-ogg")
-include(":libraries:operation:aurakit-audio-convert")
-include(":libraries:operation:aurakit-media-cut")
-include(":libraries:foundation:aurakit-sources-foundation")
-include(":libraries:foundation:aurakit-codecs-foundation")
-include(":libraries:engine:aurakit-engine-entry")
-include(":libraries:engine:aurakit-engine-entry-pack")
+//cores
 include(":libraries:core:aurakit-core")
+include(":libraries:core:aurakit-codec-core")
+include(":libraries:core:aurakit-source-core")
+include(":libraries:core:aurakit-operation-core")
 
+
+//foundations
+include(":libraries:foundation:aurakit-codecs-foundation")
+include(":libraries:foundation:aurakit-sources-foundation")
+
+//codecs
+include(":libraries:codec:aurakit-codec-ogg")
+
+//operations
+include(":libraries:operation:aurakit-media-transcoder")
 
 
 pluginManagement {
@@ -46,7 +43,22 @@ dependencyResolutionManagement {
         mavenCentral()
         mavenLocal()
     }
+
+    versionCatalogs {
+        create("aurakit") {
+            from(files("gradle/aurakit.versions.toml"))
+        }
+    }
 }
 
 rootProject.name = "AuraKit"
 include(":app")
+
+
+
+
+
+
+//demos
+include(":demo:media-convertor-demo")
+
