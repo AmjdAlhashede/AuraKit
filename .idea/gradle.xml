@@ -12,7 +12,7 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/demo" />
-            <option value="$PROJECT_DIR$/demo/media-convertor-demo" />
+            <option value="$PROJECT_DIR$/demo/media-transcodec-demo" />
             <option value="$PROJECT_DIR$/libraries" />
             <option value="$PROJECT_DIR$/libraries/aurakit-android-prime" />
             <option value="$PROJECT_DIR$/libraries/aurakit-common" />

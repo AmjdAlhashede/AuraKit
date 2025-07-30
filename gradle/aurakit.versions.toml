@@ -1,10 +1,11 @@
 [versions]
 groupId = "io.github.amjdalhashede"
-aurakitDevelopmentVersion = "0.0.1-alpha2"
-aurakitPublishedVersion = "0.0.1-alpha1"
+aurakitDevelopmentVersion = "0.0.1-alpha3"
+aurakitPublishedVersion = "0.0.1-alpha2"
 
 [libraries]
 core = { module = "io.github.amjdalhashede:aurakit-core", version.ref = "aurakitPublishedVersion" }
+android-prime = { module = "io.github.amjdalhashede:aurakit-android-prime", version.ref = "aurakitPublishedVersion" }
 common = { module = "io.github.amjdalhashede:aurakit-common", version.ref = "aurakitPublishedVersion" }
 codec-core = { module = "io.github.amjdalhashede:aurakit-codec-core", version.ref = "aurakitPublishedVersion" }
 operation-core = { module = "io.github.amjdalhashede:aurakit-operation-core", version.ref = "aurakitPublishedVersion" }

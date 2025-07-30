@@ -56,9 +56,5 @@ include(":app")
 
 
 
-
-
-
-//demos
-include(":demo:media-convertor-demo")
-
+//demo
+include(":demo:media-transcodec-demo")
