@@ -1,0 +1,13 @@
+[package]
+name = "ogg_jni_bridge"
+version = "0.1.0"
+edition = "2024"  
+publish = false
+
+[lib]
+crate-type = ["cdylib", "staticlib"]
+name = "ogg_jni_bridge"
+
+[dependencies]
+jni = "0.21"
+symphonia = { version = "0.5.4", features = [ "ogg", "vorbis", "pcm","opt-simd"] }

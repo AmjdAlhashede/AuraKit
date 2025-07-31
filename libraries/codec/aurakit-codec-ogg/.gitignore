@@ -1,1 +1,3 @@
 /build
+/src/main/ogg_jni_bridge/jniLibs/
+/src/main/ogg_jni_bridge/target/
