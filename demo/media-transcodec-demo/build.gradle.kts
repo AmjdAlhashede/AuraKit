@@ -48,6 +48,9 @@ dependencies {
 
 
     implementation(aurakit.android.prime)
+    implementation(aurakit.codec.ogg)
+    implementation(project(":libraries:operation:aurakit-media-transcoder"))
+
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.lifecycle.runtime.ktx)

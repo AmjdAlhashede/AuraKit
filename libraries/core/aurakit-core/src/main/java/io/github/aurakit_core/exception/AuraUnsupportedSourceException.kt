@@ -14,13 +14,6 @@
  *    limitations under the License.
  */
 
-package io.github.aurakit_android_prime
+package io.github.aurakit_core.exception
 
-import io.github.aurakit_operation_core.contract.AuraBaseOperation
-
-object AuraOperationInvoker {
-
-    suspend fun <T> invoke(operation: AuraBaseOperation<T>): T {
-        return operation.execute()
-    }
-}
+class AuraUnsupportedSourceException(message: String) : Exception(message)

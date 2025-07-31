@@ -35,7 +35,7 @@ android {
 
 dependencies {
     implementation(aurakit.common)
-    implementation(aurakit.operation.core)
+    api(aurakit.operation.core)
     implementation(aurakit.context.lifecycle)
     implementation(aurakit.codecs.foundation)
 

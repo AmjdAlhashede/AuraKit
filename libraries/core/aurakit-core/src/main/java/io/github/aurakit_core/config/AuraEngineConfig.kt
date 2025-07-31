@@ -14,13 +14,11 @@
  *    limitations under the License.
  */
 
-package io.github.aurakit_android_prime
+package io.github.aurakit_core.config
 
-import io.github.aurakit_operation_core.contract.AuraBaseOperation
-
-object AuraOperationInvoker {
-
-    suspend fun <T> invoke(operation: AuraBaseOperation<T>): T {
-        return operation.execute()
-    }
-}
+// AuraEngineConfig.kt
+data class AuraEngineConfig(
+    val debugMode: Boolean = false,
+    val defaultCodec: String? = null,
+    val allowExperimental: Boolean = false
+)

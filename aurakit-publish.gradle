@@ -13,38 +13,6 @@
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-//file:noinspection ConfigurationAvoidance
-
-//apply plugin: 'maven-publish'
-//
-//afterEvaluate {
-//    publishing {
-//        publications {
-//            def artifactId = project.name
-//            def aurakitGroupId = libs.versions.groupId.get()
-//            def aurakitVersion = libs.versions.aurakitVersion.get()
-//            def component =
-//                    components.findByName("release") ?:
-//                            components.findByName("fusedLibraryComponent") ?:
-//                                    components.findByName("javaPlatform")
-//
-//            if (component == null) {
-//                throw new GradleException("🛑 Publishing failed! '${project.name}' has no exportable components.")
-//            }
-//
-//            release(MavenPublication) {
-//                artifactId = project.name
-//                version = aurakitVersion
-//
-//                if (component.name != "javaPlatform") {
-//                    groupId = aurakitGroupId
-//                }
-//
-//                from component
-//            }
-//        }
-//    }
-//}
 
 apply plugin: 'com.android.library'
 apply plugin: 'maven-publish'
@@ -60,6 +28,7 @@ android {
 
 afterEvaluate {
     def aurakitArtifactId = project.name
+    //noinspection ConfigurationAvoidance
     def component = components.findByName("release")
     def auraDescription =  project.description != null ? project.description : "AuraKit ${aurakitArtifactId} module – modular Android framework for multimedia processing."
 

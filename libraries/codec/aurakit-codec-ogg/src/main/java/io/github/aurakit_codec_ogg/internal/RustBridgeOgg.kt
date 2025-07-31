@@ -14,13 +14,12 @@
  *    limitations under the License.
  */
 
-package io.github.aurakit_android_prime
+package io.github.aurakit_codec_ogg.internal
 
-import io.github.aurakit_operation_core.contract.AuraBaseOperation
+object RustBridgeOgg {
+    external fun decodeOgg(data: ByteArray): ByteArray?
 
-object AuraOperationInvoker {
-
-    suspend fun <T> invoke(operation: AuraBaseOperation<T>): T {
-        return operation.execute()
+    init {
+        System.loadLibrary("ogg_jni_bridge")
     }
 }

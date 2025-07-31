@@ -8,14 +8,18 @@ description = """
     Implements integrated OGG codec handling to enable seamless interaction with OGG-based audio streams across the framework.
 """.trimIndent()
 
-apply(from = rootProject.file("common_library_config.gradle"))
+project.ext.set("libName", "ogg_jni_bridge")
+apply(from = rootProject.file("build-rust.gradle"))
 apply(from = rootProject.file("aurakit-publish.gradle"))
+apply(from = rootProject.file("common_library_config.gradle"))
+
 
 android {
     namespace = "io.github.aurakit.codec.ogg"
     defaultConfig {
         consumerProguardFiles("consumer-rules.pro")
     }
+
 
     buildTypes {
         release {
@@ -39,3 +43,4 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 }
+

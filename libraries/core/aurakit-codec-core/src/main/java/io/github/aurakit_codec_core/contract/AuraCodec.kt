@@ -14,13 +14,10 @@
  *    limitations under the License.
  */
 
-package io.github.aurakit_android_prime
+package io.github.aurakit_codec_core.contract
 
-import io.github.aurakit_operation_core.contract.AuraBaseOperation
-
-object AuraOperationInvoker {
-
-    suspend fun <T> invoke(operation: AuraBaseOperation<T>): T {
-        return operation.execute()
-    }
+interface AuraCodec {
+    fun isCompatible(mimeType: String): Boolean
+    suspend fun decode(data: ByteArray): ByteArray
+    suspend fun encode(data: ByteArray): ByteArray
 }

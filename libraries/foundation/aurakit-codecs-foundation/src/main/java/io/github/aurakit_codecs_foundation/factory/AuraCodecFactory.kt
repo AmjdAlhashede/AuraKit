@@ -14,13 +14,16 @@
  *    limitations under the License.
  */
 
-package io.github.aurakit_android_prime
+package io.github.aurakit_codecs_foundation.factory
 
-import io.github.aurakit_operation_core.contract.AuraBaseOperation
 
-object AuraOperationInvoker {
+import io.github.aurakit_codec_core.contract.AuraCodec
+import java.util.ServiceLoader
 
-    suspend fun <T> invoke(operation: AuraBaseOperation<T>): T {
-        return operation.execute()
+object AuraCodecFactory {
+    private val resolvers = ServiceLoader.load(AuraCodec::class.java).toList()
+
+    fun resolve(mimeType: String): AuraCodec? {
+        return resolvers.firstOrNull { it.isCompatible(mimeType) }
     }
 }

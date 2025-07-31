@@ -17,6 +17,7 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+
         setContent {
             AuraKitTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
@@ -28,7 +29,18 @@ class MainActivity : ComponentActivity() {
             }
         }
     }
+
+    suspend fun tryIt(){
+//        val isDone =  AuraOperationInvoker.invoke(
+//            operation = AuraMediaTranscoder()
+//        )
+
+//        println("===================================isDone ===== $isDone")
+    }
+
 }
+
+
 
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {

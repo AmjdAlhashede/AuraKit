@@ -14,13 +14,15 @@
  *    limitations under the License.
  */
 
-package io.github.aurakit_android_prime
+package io.github.aurakit_source_core.contract
 
-import io.github.aurakit_operation_core.contract.AuraBaseOperation
+import java.io.InputStream
 
-object AuraOperationInvoker {
-
-    suspend fun <T> invoke(operation: AuraBaseOperation<T>): T {
-        return operation.execute()
-    }
+interface AuraSource {
+    fun mimeType(model: Any): String
+    fun length(model: Any): Long?
+    fun readByteArray(model: Any): ByteArray?
+    fun readableName(model: Any): String
+    fun isCompatible(model: Any): Boolean
+    fun openStream(model: Any): InputStream?
 }

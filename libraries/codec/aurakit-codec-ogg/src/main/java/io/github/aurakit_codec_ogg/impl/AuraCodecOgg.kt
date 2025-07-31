@@ -14,13 +14,24 @@
  *    limitations under the License.
  */
 
-package io.github.aurakit_android_prime
+package io.github.aurakit_codec_ogg.impl
 
-import io.github.aurakit_operation_core.contract.AuraBaseOperation
+import io.github.aurakit_codec_core.contract.AuraCodec
+import io.github.aurakit_codec_ogg.internal.RustBridgeOgg
 
-object AuraOperationInvoker {
 
-    suspend fun <T> invoke(operation: AuraBaseOperation<T>): T {
-        return operation.execute()
+class AuraCodecOgg : AuraCodec {
+
+    override fun isCompatible(mimeType: String): Boolean {
+        return true
     }
+
+    override suspend fun decode(data: ByteArray): ByteArray {
+      return  RustBridgeOgg.decodeOgg(data = data) ?: ByteArray(0)
+    }
+
+    override suspend fun encode(data: ByteArray): ByteArray {
+        return  ByteArray(0)
+    }
+
 }

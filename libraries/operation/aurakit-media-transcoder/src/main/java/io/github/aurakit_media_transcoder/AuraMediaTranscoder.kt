@@ -14,13 +14,12 @@
  *    limitations under the License.
  */
 
-package io.github.aurakit_android_prime
+package io.github.aurakit_media_transcoder
 
 import io.github.aurakit_operation_core.contract.AuraBaseOperation
 
-object AuraOperationInvoker {
-
-    suspend fun <T> invoke(operation: AuraBaseOperation<T>): T {
-        return operation.execute()
+class AuraMediaTranscoder : AuraBaseOperation<Boolean> {
+    override suspend fun execute(): Boolean {
+        return true
     }
 }

@@ -3,7 +3,7 @@
 
     <application>
         <provider
-            android:name="io.github.aurakit.context.lifecycle.io.github.aurakit_context_lifecycle.internal.provider.AuraContextInitProvider"
+            android:name="io.github.aurakit_context_lifecycle.internal.provider.AuraContextInitProvider"
             android:authorities="${applicationId}.aurakit.context_init"
             android:exported="false"
             android:initOrder="100" />

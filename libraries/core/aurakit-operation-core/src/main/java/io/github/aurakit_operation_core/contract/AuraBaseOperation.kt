@@ -14,13 +14,12 @@
  *    limitations under the License.
  */
 
-package io.github.aurakit_android_prime
+package io.github.aurakit_operation_core.contract
 
-import io.github.aurakit_operation_core.contract.AuraBaseOperation
-
-object AuraOperationInvoker {
-
-    suspend fun <T> invoke(operation: AuraBaseOperation<T>): T {
-        return operation.execute()
-    }
+interface AuraBaseOperation<Output> {
+    suspend fun execute(): Output
 }
+
+
+
+
