@@ -17,7 +17,7 @@
 package io.github.aurakit_codec_ogg.impl
 
 import io.github.aurakit_codec_core.contract.AuraCodec
-import io.github.aurakit_codec_ogg.internal.RustBridgeOgg
+import io.github.internal.RustBridgeOgg
 
 
 class AuraCodecOgg : AuraCodec {
@@ -27,7 +27,7 @@ class AuraCodecOgg : AuraCodec {
     }
 
     override suspend fun decode(data: ByteArray): ByteArray {
-      return  RustBridgeOgg.decodeOgg(data = data) ?: ByteArray(0)
+      return  RustBridgeOgg.decodeOgg(data = data)
     }
 
     override suspend fun encode(data: ByteArray): ByteArray {

@@ -1,7 +1,7 @@
 [versions]
 groupId = "io.github.amjdalhashede"
-aurakitDevelopmentVersion = "0.0.1-alpha5"
-aurakitPublishedVersion = "0.0.1-alpha4"
+aurakitDevelopmentVersion = "0.0.1-alpha3"
+aurakitPublishedVersion = "0.0.1-alpha3"
 
 [libraries]
 core = { module = "io.github.amjdalhashede:aurakit-core", version.ref = "aurakitPublishedVersion" }
@@ -14,5 +14,7 @@ context-lifecycle = { module = "io.github.amjdalhashede:aurakit-context-lifecycl
 codecs-foundation = { module = "io.github.amjdalhashede:aurakit-codecs-foundation", version.ref = "aurakitPublishedVersion" }
 sources-foundation = { module = "io.github.amjdalhashede:aurakit-sources-foundation", version.ref = "aurakitPublishedVersion" }
 codec-ogg = { module = "io.github.amjdalhashede:aurakit-codec-ogg", version.ref = "aurakitPublishedVersion" }
+media-transcoder = { module = "io.github.amjdalhashede:aurakit-media-transcoder", version.ref = "aurakitPublishedVersion" }
+
 [plugins]
 

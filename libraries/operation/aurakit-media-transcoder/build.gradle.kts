@@ -34,10 +34,10 @@ android {
 }
 
 dependencies {
-    implementation(aurakit.common)
-    api(aurakit.operation.core)
-    implementation(aurakit.context.lifecycle)
-    implementation(aurakit.codecs.foundation)
+    implementation(project(":libraries:foundation:aurakit-sources-foundation"))
+    implementation(project(":libraries:foundation:aurakit-codecs-foundation"))
+
+    implementation(aurakit.operation.core)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

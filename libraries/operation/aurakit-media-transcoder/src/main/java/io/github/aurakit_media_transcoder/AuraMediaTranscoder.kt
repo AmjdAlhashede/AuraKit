@@ -16,10 +16,21 @@
 
 package io.github.aurakit_media_transcoder
 
+import io.github.aurakit_codecs_foundation.factory.AuraCodecFactory
 import io.github.aurakit_operation_core.contract.AuraBaseOperation
+import io.github.aurakit_sources_foundation.factory.AuraSourceFactory
 
-class AuraMediaTranscoder : AuraBaseOperation<Boolean> {
-    override suspend fun execute(): Boolean {
-        return true
+
+class AuraMediaTranscoder(
+    private val input: Any,
+    private val startMs: Long,
+    private val endMs: Long,
+) : AuraBaseOperation<ByteArray> {
+    override suspend fun execute(): ByteArray {
+        val auraSource = AuraSourceFactory.resolve(input) ?: error("this input is not supported")
+        val auraCodec = AuraCodecFactory.resolve(auraSource.mimeType(input))?: error("this input is not supported")
+        val auraByteArray = auraSource.openStream(input)?.readBytes() ?: error("this input is not supported")
+        println("------------------=================[AURA KIT CUT MEDIA OPERATION]= before decode ${auraByteArray.size}")
+        return auraByteArray.let { auraCodec.decode(it) }
     }
 }

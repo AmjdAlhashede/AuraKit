@@ -30,7 +30,7 @@ android {
 
 dependencies {
     api(aurakit.codec.core)
-    implementation(aurakit.common)
+    api(aurakit.common)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

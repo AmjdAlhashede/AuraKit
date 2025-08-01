@@ -39,7 +39,9 @@ tasks.register("copyRustLibs",Copy) {
     include("**/*.so")
 }
 
-tasks.named("preBuild") {
-    dependsOn("copyRustLibs")
+tasks.register("cleanAndPrepareRust") {
+    group = "rust"
+    description = "Cleans project, builds Rust, and prepares libs."
+    dependsOn("clean", "buildRust", "copyRustLibs")
 }
 

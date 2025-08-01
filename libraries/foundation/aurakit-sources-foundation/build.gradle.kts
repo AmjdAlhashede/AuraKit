@@ -29,7 +29,8 @@ android {
 }
 
 dependencies {
-    implementation(aurakit.common)
+    api(aurakit.common)
+    api(aurakit.context.lifecycle)
     api(aurakit.source.core)
 
     implementation(libs.androidx.core.ktx)

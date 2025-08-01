@@ -14,10 +14,10 @@
  *    limitations under the License.
  */
 
-package io.github.aurakit_codec_ogg.internal
+package io.github.internal
 
 object RustBridgeOgg {
-    external fun decodeOgg(data: ByteArray): ByteArray?
+    external fun decodeOgg(data: ByteArray): ByteArray
 
     init {
         System.loadLibrary("ogg_jni_bridge")

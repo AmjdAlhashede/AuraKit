@@ -34,8 +34,8 @@ android {
 dependencies {
     implementation(aurakit.common)
     api(aurakit.operation.core)
-    api(aurakit.sources.foundation)
-    api(aurakit.codecs.foundation)
+    implementation(project(":libraries:foundation:aurakit-sources-foundation"))
+    implementation(project(":libraries:foundation:aurakit-codecs-foundation"))
 
 
     implementation(libs.androidx.core.ktx)

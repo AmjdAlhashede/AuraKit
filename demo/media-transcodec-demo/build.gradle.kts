@@ -45,10 +45,8 @@ kotlin {
 }
 
 dependencies {
-
-
-    implementation(aurakit.android.prime)
-    implementation(aurakit.codec.ogg)
+    implementation(project(":libraries:codec:aurakit-codec-ogg"))
+    implementation(project(":libraries:aurakit-android-prime"))
     implementation(project(":libraries:operation:aurakit-media-transcoder"))
 
 
